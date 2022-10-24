@@ -36,6 +36,7 @@ int main()
 
 
 /****************数据结构实验*********************/
+/***蟀.h****/
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -200,3 +201,84 @@ int main()
 	return 0;
 }
 
+//练习：判断一个数是否为奇数，取1到100之间的奇数
+int main()
+{
+	for(int i=1;i<100;i++)
+	if (i % 2 == 1)
+		printf("%d ", i);
+	return 0;
+}
+//swith   case    break用法
+int main()
+{
+	int day = 0;
+	scanf("%d", &day);
+	switch (day)
+	{
+	case 1:
+		printf("月曜日\n");
+		break;
+	case 2:
+		printf("火曜日\n");
+		break;
+	case 3:
+		printf("水曜日\n");
+		break;
+	case 4:
+		printf("木曜日\n");
+		break;
+	case 5:
+		printf("金曜日\n");
+		break;
+	case 6:
+		printf("土曜日\n");
+		break;
+	case 7:
+		printf("日曜日\n");
+		break;
+	default:
+		printf("输入错误\n");
+	return 0;
+	}
+}
+
+int main()
+{
+	int n = 1;
+	int m = 2;
+	switch (n) //因为无break，所以从1往后都执行，直到遇到break
+	{
+	case 1: m++; //m=3
+	case 2: n++; //n=2
+	case 3: 
+		switch (n) //n=2
+		{
+		case 1:n++;  //不执行
+		case 2:m++, n++; break; //n=3 m=4
+		default:
+			break;  //弹出case 3里的switch，继续执行case 4
+		}
+	case 4:m++; //m=5
+	default:
+		break;
+	}
+	printf("m=%d,n=%d\n", m, n);
+	return 0;
+}
+
+int main()
+{
+	int i = 0;
+	while (i < 10)
+	{
+		i++;
+		if (i == 5)
+			continue;//后面的代码不再执行，跳转回while
+		printf("%d ", i);
+		
+		//break; //跳出
+		//continue; //跳回
+	}
+	return 0;
+}

@@ -282,3 +282,29 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	int a = 1, b = 2, c = 3;
+	if (a > c)//当if后没有括号代表if只影响下一个语句
+		b = a;  //因为if不通过跳过此句
+		a = c;
+		c = b;
+	return 0;
+}
+
+int main()
+{
+	int i = 0;
+	while (i < 10)
+	{
+		i++;
+		if (i == 5)
+			continue;//后面的代码不再执行，跳转回while
+		printf("%d ", i);
+		
+		//break; //跳出
+		//continue; //跳回
+	}
+	return 0;
+}

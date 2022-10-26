@@ -308,3 +308,99 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	int a, b;
+	scanf("%d", &a);
+	switch (a)
+	{
+	case 1:
+		printf("我回来了");
+		break;
+	case 2:
+		printf("我还在生气了");
+		break;
+	case 3:
+		printf("想听听我想说什么？\n");
+		scanf("%d", &b);
+		switch (b)
+		{
+		case 1:
+			printf("真话");
+			break;
+		case 2:
+			printf("假话");
+			break;
+		default:
+			printf("不听不听");
+			break;
+		}
+	default:
+		break;
+	}
+	return 0;
+}
+
+int main()
+{
+	//int ch = 0; //EOF-文件结束标志
+	//while ((ch = getchar()) != EOF)
+	//{
+	//	putchar(ch);
+	//}
+	int ret = 0;
+	char arr[20];
+	printf("请输入密码：");
+	scanf("%s", arr);
+	printf("请确认密码（Y/N）:");
+	getchar();//读取缓冲区里剩余的\n
+	ret = getchar();//若无i= getchar()，则会直接读取\n使得ret=‘\n’==10
+	if (ret == 'Y')
+	{
+		printf("确认成功\n");
+	}
+	else
+	{
+		printf("放弃确认\n");
+	}
+	return 0;
+}
+
+int main()
+{
+	int ch;
+	int ret = 0;
+	char arr[20];
+	printf("请输入密码：");
+	scanf("%s", arr); //若输入的密码带空格等非法字符如：123456 asd
+	printf("请确认密码（Y/N）:");
+	while ((ch = getchar()) != '\n');//可以使用while循环
+	{           //将getchar重复运行直到等于'\n'
+		;       //停止循环
+	}           //此时缓冲区里的东西已被全部取出
+	ret = getchar();
+	if (ret == 'Y')
+	{
+		printf("确认成功\n");
+		printf("你的密码是：%s", arr);
+	}
+	else
+	{
+		printf("放弃确认\n");
+	}
+	return 0;
+}
+
+int main()
+{
+	int ch = 0;
+	while((ch=getchar())!=EOF)
+	{
+	if (ch < '0' || ch > '9')
+	
+		continue;
+		putchar(ch);
+	}
+	return 0;
+}

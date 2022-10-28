@@ -404,3 +404,31 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	int n;
+	int i;
+	int k = 1;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++) //计算n的阶乘
+	{
+		k = k * i;
+	}
+	printf("%d", k);
+	return 0;
+}
+
+int main()
+{
+	int i = 1;
+	int sum = 0;
+	int k = 1;	
+		for (i = 1; i <= 10;i++)  //计算1！+2！+......+10！
+		{
+			k = k * i;
+			sum = sum + k;
+		}
+	printf("%d", sum);
+	return 0;
+}

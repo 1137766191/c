@@ -465,3 +465,50 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	char arr1[] = "welcome to my word";
+	char arr2[] = "******************";
+	int left = 0;
+	int right;
+	right = sizeof(arr1) / sizeof(arr1[0])-2;
+	
+	while (left <= right)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		printf("%s\n", arr2);
+		Sleep(500);
+		system("cls");
+		left++;
+		right--;		
+	}
+	printf("%s", arr2);
+	return 0;
+}
+
+int main()
+{
+	int i;
+	char arr[20];
+	for (i = 0; i < 3; i++)
+	{
+		printf("请输入密码：");
+		scanf("%s", arr);
+		if (strcmp(arr,"123456")==0) // ==不能用来比较两个字符串是否相等，应该使用一个库函数strcmp
+		{
+			printf("登陆成功！\n");
+			break;
+		}
+		else
+		{
+			printf("密码错误\n");
+		}
+	}
+	if (i == 3)
+	{
+		printf("三次密码均错误，清退出程序");
+	}
+	return 0;
+}

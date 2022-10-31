@@ -512,3 +512,21 @@ int main()
 	}
 	return 0;
 }
+
+/*练习（自做）*/
+//1.计算n的阶乘
+//2.计算1！+2！+...+n！
+int main()
+{
+	int n; int i; int k=0;
+	int sum=1;
+	printf("请输入要计算谁的阶乘：");
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++)
+	{		
+		sum = sum * i;	
+		k = k+sum;
+	}
+	printf("n的阶乘是：%d\n", sum);
+	printf("1！+2！+...+n！的值为：%d", k);
+}

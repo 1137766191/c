@@ -530,3 +530,29 @@ int main()
 	printf("n的阶乘是：%d\n", sum);
 	printf("1！+2！+...+n！的值为：%d", k);
 }
+
+int main() //输入a,b,c,让a,b,c从大到小输入
+{
+	int a = 0; int b = 0; int c = 0;
+	scanf("%d%d%d", &a, &b, &c);
+	if (a<b)
+	{
+		int n = a;
+		a = b;
+		b = n;
+	}
+	if (a < c)
+	{
+		int n = a;
+		a = c;
+		c = n;
+	}
+	if (b < c)
+	{
+		int n = b;
+		b = c;
+		c = n;
+	}
+	printf("%d %d %d\n", a, b, c);
+	return 0;
+}

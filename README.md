@@ -556,3 +556,54 @@ int main() //输入a,b,c,让a,b,c从大到小输入
 	printf("%d %d %d\n", a, b, c);
 	return 0;
 }
+
+int main()
+{
+	int n;
+	for (n = 1; n <= 100; n++)
+	{
+		if (n % 3 == 0)
+			printf("%d\n", n);
+	}
+	return 0;
+}
+
+int main() //求两个数的最大公约数
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+	if (a < b)
+	{
+		int n = a;
+		a = b;
+		b = n;
+	}
+	while (a%b)
+	{
+		int r = a % b;
+		a = b;
+		b = r;
+	}
+	printf("%d\n", b);
+	return 0;
+}
+
+int main()
+{
+	int i;
+	int y=0;
+	for (i = 1000; i <= 2000; i++)
+		//能被4整除并且不能被100整除是闰年
+		//能被400整除是闰年
+		
+	{
+		if (i % 4 == 0&&i % 100 != 0|| i % 400 == 0)
+		{
+			printf("%d\n", i);
+			y++;
+		}	
+	}
+	printf("闰年有%d天", y);
+	return 0;
+}
+

@@ -607,3 +607,66 @@ int main()
 	return 0;
 }
 
+int main()//计算1到100之间带有多少个9
+{
+	int i;
+	int j=0;
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 10 == 9)
+			j++;
+		if (i / 10 == 9)
+			j++;
+	}
+	printf("%d", j);
+	return 0;
+}
+
+int main()  //计算1/1+1/2+1/3+1/4+...+1/100
+{
+	int b;
+	double sum = 0;
+	int nb = 1;
+	for (b = 1; b <= 100; b++)
+	{
+		sum += nb * 1.0 / b;
+		nb = -nb;
+	}
+	printf("%lf\n", sum);
+	return 0;
+}
+
+int main()   //求10个数的最大值
+{ 
+	int arr[] = { -1,-2,-3,-4,-5,-8,-9,-51,-55 };
+	int max=arr[0]; int i;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (i = 1; i <= sz; i++)
+	{
+		if (max < arr[i])
+		{
+			max = arr[i];
+		}
+	}
+	printf("max=%d", max);
+	return 0;
+}
+
+int main()
+{
+	int a, b, c;
+	for (a = 1; a <= 9; a++)
+	{
+		printf("\n");
+		for (b = 1; b <= 9; b++)
+		{			
+			c = a * b;
+			printf("%d*%d=%-2d ", a, b, c);//%-2d将整数输入两位并向左对齐
+			if (b == 9 - a + 1)
+			{
+				break;
+			}
+		}
+	}
+	return 0;
+}

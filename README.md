@@ -670,3 +670,85 @@ int main()
 	}
 	return 0;
 }
+
+//猜数字游戏
+
+void menu()
+{
+	printf("*****************************\n");
+	printf("****    1.play 0.exit    ****\n");
+	printf("*****************************\n");
+}
+void game()
+{
+	//1.电脑会生成一个随机数
+	int ret = 0;
+	//那时间戳来设置随机数的生成起始点
+	ret = rand() % 100 + 1;//妙手%100+1,生成1-100之间的随机数
+	//2.猜数字
+	int guess;
+	while (1)
+	{
+		printf("请猜数字:");
+		scanf("%d", &guess);
+		if (guess > ret)
+		{
+			printf("猜大了\n");
+		}
+		else if (guess < ret)
+		{
+			printf("猜小了\n");
+		}
+		else
+		{
+			printf("恭喜你猜对了\n");
+			break;
+		}
+	}
+}
+int main()
+{
+	int i;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		menu();
+		printf("请选择：");
+		scanf("%d", &i);
+		switch (i)
+		{
+		case 0:	
+			printf("已退出");
+			break;
+		case 1:
+			game();
+			break;
+		default:
+			printf("输入错误");
+			break;
+		}
+	} while (i);
+	return 0;
+}
+
+//goto 跳到哪里
+int main()
+{
+	char input[20] = { 0 };
+	//shutdown -s -t 60 设置关机,在cmd上
+	//system()-执行系统命令的
+	system("shutdown - s - t 60");
+	again:
+	printf("请注意你的电脑将在1分钟之内关机，如果输入：我是猪，就取消关机\n请输入：");
+	scanf("%s", input);
+	if (strcmp(input, "我是猪") == 0)
+	{
+		system("shutdown - a");
+		printf("取消成功");
+	}
+	else
+	{
+		goto again;
+	}
+	return 0;
+}

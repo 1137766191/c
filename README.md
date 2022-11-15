@@ -752,3 +752,78 @@ int main()
 	}
 	return 0;
 }
+
+int jh1(int a, int b)// 不能完成任务！！
+{                    //因为将x与y代入后只交换了ab的位置，并没有影响到xy
+	int c = 0;
+	c = a;
+	a = b;
+	b = c;
+	return 0;
+}
+int jh2(int*a, int*b)//这才是正确的写法
+                     //将x与y的地址代入到a和b的地址，将ab的地址交换，也就相当于xy的地址交换
+{
+	int c = 0;
+	c = *a;
+	*a = *b;
+	*b = c;
+	return 0;
+}
+int main()
+{
+	int x = 10;
+	int y = 20;
+	jh2(&x, &y);
+	printf("x=%d,b=%d", x, y);
+	return 0;
+}
+/*******像比较ab的最大值为什么不用地址********/
+//因为在函数中只需要比较ab的最大值就可以了,传值就可以了,不需要改变值
+/*练习*/
+//1.写一个函数判断100到200之间的素数
+int prime(int n)
+{
+	int m; 
+	for (m = 3; m <= n / 2; m++)//m<=sqrt(n)更简单
+	{
+		if (n%m == 0)
+		{
+			break;
+		}
+	}
+	if (m > n / 2)
+	{
+		m++;
+		printf("%d\n", n);
+	}
+	return 0;
+}
+int main()
+{
+	int i; 
+	for (i = 101; i < 200; i += 2)
+	{
+		prime(i);	
+	}
+	return 0;
+}
+
+//2.写一个函数判断一年是不是闰年
+int cz(int a)
+{
+	if (a % 400 == 0 || a % 4 == 0 && a % 100 != 0)
+	{
+		printf("是闰年");
+		return a;
+	}
+	printf("不是闰年");
+}
+int main()
+{
+	int i;
+	printf("请输入你想要查找的年份：");
+	scanf("%d", &i);
+	cz(i);
+	return 0;
+}

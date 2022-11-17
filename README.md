@@ -827,3 +827,64 @@ int main()
 	cz(i);
 	return 0;
 }
+
+//3.写一个二分查找函数
+int chazhao(int arr[], int k, int sz)
+{
+	int right = sz - 1;
+	int left = 0;
+	while (left <= right)
+	{
+		int mid = (right + left) / 2;
+		if (k < arr[mid])
+		{
+			right = mid - 1;
+		}
+		else if (k > arr[mid])
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+	return -1;
+}
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int k;
+	scanf("%d", &k);
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int ret = chazhao(arr, k, sz);
+	if (ret == -1)
+	{
+		printf("找不到");
+	}
+	else
+		printf("下标是%d", ret);
+		
+	return 0;
+}
+//4.写一个函数，每调用一次函数，就会将num的值增加1
+int hs(int* i)
+{
+	(*i)++; //++的优先级比较高，结果会变成i++而不是*i++，因此要把*p括起来
+	return 0;
+}
+int main()
+{
+	int i=0;
+	hs(&i);
+	printf("%d\n", i);
+	hs(&i);
+	printf("%d\n", i);
+	return 0;
+}
+
+int main()
+{
+	printf("%d", printf("%d", printf("%d", 43)));//说法：先打印43，因为有两个字符，然后printf返回的值为2
+	return 0;//再打印2，这时因为只有1个字符，返回值为1，这时打印1，结果为4321
+}

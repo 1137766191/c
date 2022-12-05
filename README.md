@@ -888,3 +888,20 @@ int main()
 	printf("%d", printf("%d", printf("%d", 43)));//说法：先打印43，因为有两个字符，然后printf返回的值为2
 	return 0;//再打印2，这时因为只有1个字符，返回值为1，这时打印1，结果为4321
 }
+
+//递归
+void print(int n)
+{
+	if (n > 9)
+	{
+		print(n / 10);
+	}
+	printf("%d ", n % 10);
+} 
+int main()
+{
+	unsigned int num = 0;//unsigned:无符号整数
+	scanf("%d", &num);
+	print(num);
+	return 0;
+}

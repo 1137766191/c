@@ -905,3 +905,104 @@ int main()
 	print(num);
 	return 0;
 }
+
+经典猜数字游戏
+void game()
+{
+	int num = rand() % 100 + 1;//生成0-100的随机数
+	int y = 0;
+	while (1)
+	{
+		int x; 
+		cout << "猜一个1-100的数字\n猜错5次游戏结束"<<endl;
+	a:
+		cout << "请输入你猜的数字:";
+		cin >> x;
+		if (x > 100 || x < 0)
+		{
+			cout << "输入错误,请再次输入" << endl;
+			goto a;
+		}
+		if (x < num)
+		{
+			cout << "猜小了"<<endl;
+			++y;
+			if (y == 5)
+			{
+				cout << "你失败了" << endl;
+				break;
+			}
+		}
+		else if (x > num)
+		{
+			cout<<"猜大了"<<endl;
+			++y;
+			if (y == 5)
+			{
+				cout << "你失败了" << endl;
+				break;
+			}
+		}
+		else
+		{
+			cout<<"恭喜你,猜中了"<<endl;
+			break;
+		}
+	}
+}
+int main()
+{
+	srand((unsigned int)time(null));
+	game();
+	return 0;
+}
+小改抽卡模拟器
+void game()
+{
+	int j=0; int k=0;
+	while (1)
+	{
+		
+		int num = rand() % 100 + 1;//生成0-100的随机数
+		int mum = rand() % 100 + 1;
+		if (mum == num)
+		{
+			cout << "********恭喜你,抽中了!********" << endl;
+			j++; k++;
+			break;
+		}
+		else
+		{
+			cout << "很遗憾,没抽中" << endl;
+			j++;
+			break;
+		}
+	}	
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	int a; int b;
+	cout << "开始抽卡!" << endl;
+	cout << "单抽请输入1  10连抽请输入2  结束请输入0" << endl;
+	while (1)
+	{
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			game();
+			continue;
+		case 2:
+			for (b = 1; b <= 10; b++)
+			{
+				game();
+			}
+			continue;
+		case 0:
+			goto a;
+		}
+	}
+	a:
+	return 0;
+}

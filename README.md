@@ -1006,3 +1006,20 @@ int main()
 	a:
 	return 0;
 }
+
+//求水仙数
+int main()
+{
+	int i; int a; int b; int c;
+	for (i = 100; i <= 999; i++)
+	{
+		a = pow((i % 100 % 10),3);//次幂,开根的写法pow(x,y),x的y次方,头文件math.h
+		b = pow((i % 100 / 10), 3);
+		c = pow((i / 100), 3);
+		if (a + b + c == i)
+		{
+			printf("数值%d是水仙数\n", i);
+		}
+	}
+	return 0;
+}

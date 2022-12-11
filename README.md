@@ -1023,3 +1023,49 @@ int main()
 	}
 	return 0;
 }
+
+//敲桌子:案例描述:从1开始数到数字100，如果数字个位含有7，或者数字十位含有7，或者该数字是7的倍数，我们打印敲桌子，其余数字直接打印输出。
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 99; i++)
+	{
+		if (i % 7 == 0 || i % 10 == 7 || i / 10 == 7)
+		{
+			cout << "敲桌子" << endl;
+		}
+		else {
+			cout << i << endl;
+		}
+	}
+	return 0;
+}
+
+int main()
+//{
+//	int i; int k;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		for (k = 1; k <= 10; k++)
+//		{
+//			cout << "* ";
+//		}
+//		cout << endl;
+//	}
+//	return 0;
+//}
+
+//九九乘法表
+int main()
+{
+	int i; int k; int l;
+	for (i = 1; i <= 9; i++)
+	{
+		for (k = 1; k <= i; k++)
+		{
+			cout << k << "*" << i << "=" << k * i<<"	";
+		}
+		cout << endl;
+	}
+	return 0;
+}
